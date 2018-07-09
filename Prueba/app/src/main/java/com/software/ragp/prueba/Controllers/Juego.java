@@ -2,6 +2,7 @@ package com.software.ragp.prueba.Controllers;
 
 import android.content.ContentValues;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
@@ -187,12 +188,20 @@ public class Juego extends AppCompatActivity implements View.OnClickListener{
                     TextView txtpuntuacion1 = view.findViewById(R.id.txtPuntuacionJ1L);
                     TextView txtpuntuacion2 = view.findViewById(R.id.txtPuntuacionJ2L);
                     TextView txttiempo1 = view.findViewById(R.id.txtTiempoP);
+                    Button btnFacebook = view.findViewById(R.id.btnFacebook);
+                    Button btnTwitter = view.findViewById(R.id.btnTwitter);
 
                     txtJugador1.setText(txtnombreJ1.getText().toString());
                     txtJugador2.setText(txtnombreJ2.getText().toString());
                     txtpuntuacion1.setText(txtpuntajeJ1.getText().toString());
                     txtpuntuacion2.setText(txtpuntajeJ2.getText().toString());
                     txttiempo1.setText(txttiempo.getText().toString());
+                    btnTwitter.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            //Twitter
+                        }
+                    });
 
 
                     builder.setView(view);
