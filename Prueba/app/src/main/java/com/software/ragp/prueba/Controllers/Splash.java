@@ -12,10 +12,6 @@ import android.widget.TextView;
 
 import com.software.ragp.prueba.R;
 
-import java.util.Timer;
-import java.util.TimerTask;
-import java.util.zip.Inflater;
-
 public class Splash extends AppCompatActivity {
     public static String jugador1, jugador2;
     @Override
@@ -50,6 +46,7 @@ public class Splash extends AppCompatActivity {
 
                     }
                 });
+                builder.setCancelable(false);
                 builder.show();
             }
         }.start();

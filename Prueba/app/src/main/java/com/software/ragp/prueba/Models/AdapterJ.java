@@ -6,6 +6,7 @@ import android.graphics.BitmapFactory;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.GridView;
 import android.widget.ImageView;
 
 public class AdapterJ extends BaseAdapter{
@@ -41,11 +42,12 @@ public class AdapterJ extends BaseAdapter{
         ImageView item = new ImageView(context);
         item.setScaleType(ImageView.ScaleType.FIT_XY);
         item.setPadding(8,8,8,8);
+        item.setLayoutParams(new GridView.LayoutParams(ancho,alto));
         BitmapFactory.Options op = new  BitmapFactory.Options();
-        op.inSampleSize=3;
+        op.inSampleSize=2;
         Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(),imagenesJuego[position], op);
         item.setImageBitmap(bitmap);
 
-        return null;
+        return item;
     }
 }

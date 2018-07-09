@@ -67,7 +67,7 @@ public class Juego extends AppCompatActivity implements View.OnClickListener{
         nivel = Menu.dificultad;
         obtenerMedidas();
         start_game();
-        final AdapterJ adapterJ = new AdapterJ(imagenesJuego, alto, ancho, this);
+        final AdapterJ adapterJ = new AdapterJ(imgFondo, alto, ancho, Juego.this);
         contenedor.setAdapter(adapterJ);
         contenedor.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -91,7 +91,9 @@ public class Juego extends AppCompatActivity implements View.OnClickListener{
                 mostarImagen(item, position);
             }
         });
-
+        inputData();
+        bandera=true;
+        turno();
         if (inicioJugador==1){
             txtnombreJ1.setTextColor(getColor(R.color.colorVerde));
             Toast.makeText(Juego.this, "Empieza jugador 1", Toast.LENGTH_SHORT).show();
@@ -105,11 +107,16 @@ public class Juego extends AppCompatActivity implements View.OnClickListener{
             txtpuntajeJ1.setText("Puntuación: "+puntuacionJ1);
             txtpuntajeJ2.setText("Puntuación: "+puntuacionJ2);
         }
-        inputData();
-        bandera=true;
-        turno();
-    }
 
+    }
+    private void inizialite() {
+        contenedor = findViewById(R.id.contenedor);
+        txtnombreJ1 = findViewById(R.id.txtnombreJ1);
+        txtnombreJ2 = findViewById(R.id.txtnombreJ2);
+        txtpuntajeJ1 = findViewById(R.id.txtpuntajeJ1);
+        txtpuntajeJ2 = findViewById(R.id.txtpuntajeJ2);
+        txttiempo = findViewById(R.id.txttiempoP);
+    }
     private void mostarImagen(ImageView item, int position) {
         BitmapFactory.Options opt = new BitmapFactory.Options();
         opt.inSampleSize = 5;
@@ -154,9 +161,9 @@ public class Juego extends AppCompatActivity implements View.OnClickListener{
             }
             if (imgAleatorias[pos1] == imgAleatorias[pos2]) {
                 imagen1.setVisibility(View.INVISIBLE);
-                imagen1.setVisibility(View.INVISIBLE);
+                imagen2.setVisibility(View.INVISIBLE);
                 imagen1 = null;
-                imagen1 = null;
+                imagen2 = null;
                 salir--;
 
                 if (inicioJugador==2){
@@ -185,7 +192,7 @@ public class Juego extends AppCompatActivity implements View.OnClickListener{
                     txtJugador2.setText(txtnombreJ2.getText().toString());
                     txtpuntuacion1.setText(txtpuntajeJ1.getText().toString());
                     txtpuntuacion2.setText(txtpuntajeJ2.getText().toString());
-                    txttiempo1.setText(txttiempo1.getText().toString());
+                    txttiempo1.setText(txttiempo.getText().toString());
 
 
                     builder.setView(view);
@@ -325,14 +332,7 @@ public class Juego extends AppCompatActivity implements View.OnClickListener{
         modo_juego = jugar.getInt("modo",1);
     }
 
-    private void inizialite() {
-        contenedor = findViewById(R.id.contenedor);
-        txtnombreJ1 = findViewById(R.id.txtJugador2);
-        txtnombreJ2 = findViewById(R.id.txtnombreJ2);
-        txtpuntajeJ1 = findViewById(R.id.txtpuntajeJ1);
-        txtpuntajeJ2 = findViewById(R.id.txtpuntajeJ2);
-        txttiempo = findViewById(R.id.txttiempo);
-    }
+
 
     public void generarFondo() {
         imgFondo = new int[nivel * 2];

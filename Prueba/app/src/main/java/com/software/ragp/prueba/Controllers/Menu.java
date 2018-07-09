@@ -14,7 +14,7 @@ import com.software.ragp.prueba.R;
 
 public class Menu extends AppCompatActivity implements View.OnClickListener{
     Button btnJugar, btnPuntacion, btnConfiguracion;
-    public static int dificultad =0;
+    public static int dificultad =4;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
