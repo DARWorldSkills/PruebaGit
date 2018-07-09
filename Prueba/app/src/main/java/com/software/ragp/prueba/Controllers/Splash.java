@@ -3,6 +3,7 @@ package com.software.ragp.prueba.Controllers;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -21,9 +22,16 @@ public class Splash extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-        TimerTask timerTask = new TimerTask() {
+
+
+        CountDownTimer countDownTimer = new CountDownTimer(2000, 1000) {
             @Override
-            public void run() {
+            public void onTick(long millisUntilFinished) {
+
+            }
+
+            @Override
+            public void onFinish() {
                 AlertDialog.Builder builder = new AlertDialog.Builder(Splash.this);
                 LayoutInflater inflater = getLayoutInflater();
                 View view = inflater.inflate(R.layout.jugadores_layout,null);
@@ -44,9 +52,6 @@ public class Splash extends AppCompatActivity {
                 });
                 builder.show();
             }
-        };
-
-        Timer timer = new Timer();
-        timer.schedule(timerTask, 1500);
+        }.start();
     }
 }
