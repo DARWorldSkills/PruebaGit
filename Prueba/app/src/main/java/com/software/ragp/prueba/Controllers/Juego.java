@@ -2,13 +2,14 @@ package com.software.ragp.prueba.Controllers;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.TextView;
 
 import com.software.ragp.prueba.R;
 
-public class Juego extends AppCompatActivity {
+public class Juego extends AppCompatActivity implements View.OnClickListener{
     private int [] imagenesJuego = {
             R.drawable.alemania,
             R.drawable.argentina,
@@ -26,6 +27,7 @@ public class Juego extends AppCompatActivity {
     Button btnColor1, btnColor2, btnColor3, btnColor4;
     int movimientos, pos1=-1, pos2=-1;
     GridView contenedor;
+    int nivel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,4 +49,10 @@ public class Juego extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+
+        }
+    }
 }
