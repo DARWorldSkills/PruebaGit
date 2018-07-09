@@ -185,8 +185,8 @@ public class Juego extends AppCompatActivity implements View.OnClickListener{
                     View view = inflater.inflate(R.layout.juego_terminado_layout, null);
                     TextView txtJugador1 = view.findViewById(R.id.txtNombreJ1L);
                     TextView txtJugador2 = view.findViewById(R.id.txtNombreJ2L);
-                    TextView txtpuntuacion1 = view.findViewById(R.id.txtPuntuacionJ1L);
-                    TextView txtpuntuacion2 = view.findViewById(R.id.txtPuntuacionJ2L);
+                    final TextView txtpuntuacion1 = view.findViewById(R.id.txtPuntuacionJ1L);
+                    final TextView txtpuntuacion2 = view.findViewById(R.id.txtPuntuacionJ2L);
                     TextView txttiempo1 = view.findViewById(R.id.txtTiempoP);
                     Button btnFacebook = view.findViewById(R.id.btnFacebook);
                     Button btnTwitter = view.findViewById(R.id.btnTwitter);
@@ -199,7 +199,19 @@ public class Juego extends AppCompatActivity implements View.OnClickListener{
                     btnTwitter.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            //Twitter
+                            Intent intent = new Intent(Intent.ACTION_SEND);
+                            intent.setType("text/plain");
+                            intent.putExtra(Intent.EXTRA_TEXT, "El puntaje del jugadro uno es:" + txtpuntuacion1 + "El puntaje del jugador 2 es:" + txtpuntuacion2+ "Su tiempo fue:" + txttiempo);
+                            intent.setPackage("com.twitter.android");
+
+                            try {
+                                startActivity(intent);
+
+                            }catch (Exception e){
+                                Toast.makeText(Juego.this, "No cuentas con esta app, Por favor instala esta app", Toast.LENGTH_SHORT).show();
+                                e.printStackTrace();
+
+                            }
                         }
                     });
 
