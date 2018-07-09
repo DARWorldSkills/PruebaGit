@@ -270,8 +270,8 @@ public class Juego extends AppCompatActivity implements View.OnClickListener{
             contentValues.put("JUGADOR",score.getNombre());
             contentValues.put("PUNTAJE",score.getPuntuacion());
             contentValues.put("MODO",score.getModo());
-            contentValues.put("DIFICULTAD",score.getDificultad());
-            db.insert("PUNTUACION",null,contentValues);
+            contentValues.put("DIFUCULTAD",score.getDificultad());
+            db.insert("DATOS",null,contentValues);
 
 
             contentValues = new ContentValues();
@@ -283,8 +283,8 @@ public class Juego extends AppCompatActivity implements View.OnClickListener{
             contentValues.put("JUGADOR",score.getNombre());
             contentValues.put("PUNTAJE",score.getPuntuacion());
             contentValues.put("MODO",score.getModo());
-            contentValues.put("DIFICULTAD",score.getDificultad());
-            db.insert("PUNTUACION",null,contentValues);
+            contentValues.put("DIFUCULTAD",score.getDificultad());
+            db.insert("DATOS",null,contentValues);
 
 
         }
@@ -313,8 +313,8 @@ public class Juego extends AppCompatActivity implements View.OnClickListener{
         if (nivel==4){
             ancho=dpW/3;
             alto=dpH/5;
-            ancho+=30;
-            alto+=30;
+            ancho+=50;
+            alto+=50;
             contenedor.setPadding(10,10,10,10);
             contenedor.setNumColumns(2);
 
