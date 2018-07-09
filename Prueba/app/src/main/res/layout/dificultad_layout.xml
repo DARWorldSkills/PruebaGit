@@ -40,7 +40,7 @@
             android:layout_marginTop="32dp"
             android:text="Medio"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/radioButton" />
+            app:layout_constraintTop_toBottomOf="@+id/rbtnTiempo" />
 
         <RadioButton
             android:id="@+id/rbtnDificilD"
@@ -52,7 +52,7 @@
             android:textColor="@color/colorblack"
             android:text="Difícil"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/radioButton2" />
+            app:layout_constraintTop_toBottomOf="@+id/rbtnPuntuacion" />
 
     </RadioGroup>
 
