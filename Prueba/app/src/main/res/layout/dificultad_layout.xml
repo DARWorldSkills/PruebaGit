@@ -2,6 +2,7 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/colorAccent"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -20,9 +21,11 @@
         <RadioButton
             android:id="@+id/rbtnFacilD"
             android:layout_width="wrap_content"
+            android:textSize="20dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
             android:layout_marginTop="32dp"
+            android:textColor="@color/colorblack"
             android:text="Fácil"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -31,6 +34,8 @@
             android:id="@+id/rbtnMedioD"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textColor="@color/colorblack"
             android:layout_marginStart="32dp"
             android:layout_marginTop="32dp"
             android:text="Medio"
@@ -42,7 +47,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
+            android:textSize="20dp"
             android:layout_marginTop="32dp"
+            android:textColor="@color/colorblack"
             android:text="Difícil"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/radioButton2" />
